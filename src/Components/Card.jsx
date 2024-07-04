@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import Star from "./StarRating";
 
-function Card({Cart, setCart, title, price, MRP, img}) {
-    
+function Card({ Cart, setCart, title, price, MRP, rating, img }) {
   let [toggleCart, setToggle] = useState(true);
 
   return (
@@ -16,54 +16,45 @@ function Card({Cart, setCart, title, price, MRP, img}) {
             Sale
           </div>
           {/* <!-- Product image--> */}
-          <img
-            className="card-img-top"
-            src={img}
-            alt="..."
-          />
+          <img className="card-img-top" src={img} alt={title} />
           {/*  <!-- Product details--> */}
           <div className="card-body p-4">
             <div className="text-center">
               {/*  <!-- Product name--> */}
               <h5 className="fw-bolder">{title}</h5>
               {/*  <!-- Product reviews--> */}
-              <div className="d-flex justify-content-center small text-warning mb-2">
-                <div className="bi-star-fill"></div>
-                <div className="bi-star-fill"></div>
-                <div className="bi-star-fill"></div>
-                <div className="bi-star-fill"></div>
-                <div className="bi-star-fill"></div>
-              </div>
+              <Star rating={rating} />
               {/*  <!-- Product price--> */}
               <span className="text-muted text-decoration-line-through">
                 ₹{MRP}
               </span>
-             <b> ₹{price}</b>
+              <b> ₹{price}</b>
             </div>
           </div>
           {/*  <!-- Product actions--> */}
           <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
             <div className="text-center">
-              {
-              toggleCart ? 
+              {toggleCart ? (
                 <button
                   className="btn btn-outline-dark mt-auto"
-                  onClick={() => {setToggle((prev) => !prev)
-                    setCart(Cart+1)
+                  onClick={() => {
+                    setToggle((prev) => !prev);
+                    setCart(Cart + 1);
                   }}
                 >
                   Add to Cart
                 </button>
-               : 
+              ) : (
                 <button
                   className="btn btn-outline-dark mt-auto"
-                  onClick={() => {setToggle((prev) => !prev)
-                    setCart(Cart-1)
+                  onClick={() => {
+                    setToggle((prev) => !prev);
+                    setCart(Cart - 1);
                   }}
                 >
                   Remove from Cart
                 </button>
-              }
+              )}
             </div>
           </div>
         </div>
