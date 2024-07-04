@@ -1003,7 +1003,7 @@ function Section({Cart,setCart,title}){
 
                 {data.map((e,i)=>{
         return<>
-         <Card Cart={Cart} setCart={setCart} title={e.title} img={e.thumbnail} MRP={e.price} price={Math.round(e.price * (100-e.discountPercentage)/100)} key={i}/>
+         <Card Cart={Cart} setCart={setCart} title={e.title} MRP={e.price} price={Math.round(e.price * (100-e.discountPercentage)/100)} img={e.thumbnail} key={i}/>
         </>
       
       })}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Card({Cart,setCart,title,img,price,MRP}) {
+function Card({Cart, setCart, title, price, MRP, img}) {
     
   let [toggleCart, setToggle] = useState(true);
 
