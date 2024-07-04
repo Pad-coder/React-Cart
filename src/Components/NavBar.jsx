@@ -9,7 +9,7 @@ function NavBar({ Cart }) {
       >
         <div className="container px-4 px-lg-5">
           <a className="navbar-brand" href="#!">
-            Start Bootstrap
+            <h2>E-Cart</h2>
           </a>
           <button
             className="navbar-toggler"
